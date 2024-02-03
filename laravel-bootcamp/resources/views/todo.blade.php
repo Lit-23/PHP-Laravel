@@ -16,6 +16,14 @@
             <button type="submit" class="btn btn-primary btn-sm mt-3">Add</button>
         </form>
         <hr>
+
+        @if(session('success'))
+        <div class='alert alert-success'>
+            {{ session('success') }}
+        </div>
+        @endif
+
+
         @foreach($todos as $todo)
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">

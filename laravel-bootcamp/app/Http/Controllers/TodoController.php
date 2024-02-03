@@ -14,10 +14,10 @@ class TodoController extends Controller
 
     public function create(Request $request){
         $todo = new Todo();
-        $todo->content = "Test Content";
+        $todo->content = $request->content;
         $todo->status = "pending";
         $todo->save();
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', "Added a new task successfully!");
     }
 }
